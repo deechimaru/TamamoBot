@@ -1,0 +1,1 @@
+Dir | %{Rename-Item $_ -NewName ("tamamo_{0}.jpg" -f $nr++)}

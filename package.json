@@ -1,0 +1,23 @@
+{
+    "name": "TamamoBot",
+    "version": "1.0.0",
+    "description": "Fox cutie",
+    "main": "bot.js",
+    "author": "D-Ecchi",
+    "engines": {
+        "node": "10.15.3",
+        "npm": "6.4.1"
+    },
+    "dependencies": {
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "winston": "^3.2.1"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node bot.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/deechimaru/TamamoBot.git"
+  }
+}
