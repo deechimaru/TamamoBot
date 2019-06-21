@@ -1,7 +1,8 @@
-// 3 files needed
-var Discord = require('discord.io');
-var logger = require('winston');
-var auth = require('./auth.json');
+// 4 files needed
+const Discord = require('discord.io');
+const logger = require('winston');
+const auth = require('./auth.json');
+const Booru = require('booru')
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -54,6 +55,16 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     file: 'image/tamamo (' + rand + ').jpg'
                 });
+            break;
+            case 'tamamo':
+                Booru.search('dan', ['tamamo_no_mae_(fate)'], {limit: 1, random: true})
+                    .then(post => {
+                        //console.log(post.fileUrl, post.postView)
+                        bot.sendMessage({
+                            to: channelID,
+                            message: post[0].fileUrl
+                        });
+                    })
             break;
             case 'TODO':
                 bot.sendMessage({
