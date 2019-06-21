@@ -12,12 +12,6 @@ logger.add(new logger.transports.Console, {
 logger.level = 'debug';
 
 // Initialize Discord Bot
-function randomise(){
-    var min=1; 
-    var max=199;  
-    return Math.floor(Math.random() * max) + min;
-}
-
 var bot = new Discord.Client({
    token: auth.token,
    autorun: true
@@ -45,16 +39,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: userID,
                     message: "Hi! I'm Tamamo, custom discord bot made by D-Ecchi. `I'm currently in Alpha stage, so everything can happen.` These are current commands [use & prefix]:```tamamo: sends Danbooru image \nfox: sends a wild Tamamo (soon to be deleted)! \nping: pings (in case of lag etc.) \nallow: makes certain channel Tamamo-able! \nhelp: help!```"
                 })
-            break;
-            case 'fox':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Tamamo #' + rand
-                });
-                bot.uploadFile({
-                    to: channelID,
-                    file: 'image/tamamo (' + rand + ').jpg'
-                });
             break;
             case 'tamamo':
                 Booru.search('dan', ['tamamo_no_mae_(fate)'], {limit: 1, random: true})
