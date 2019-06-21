@@ -25,7 +25,7 @@ bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
-    bot.setPresence( {game: {name:"@help"}} );
+    bot.setPresence( {game: {name:"&help"}} );
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
@@ -42,7 +42,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: userID,
-                    message: "Hi! I'm Tamamo, custom discord bot made by D-Ecchi. `I'm currently in Alpha stage, so everything can happen.` These are current commands [use @ prefix]:```fox: sends a wild Tamamo! \nping: pings (in case of lag etc.) \nallow: makes certain channel Tamamo-able! \nhelp: help!```"
+                    message: "Hi! I'm Tamamo, custom discord bot made by D-Ecchi. `I'm currently in Alpha stage, so everything can happen.` These are current commands [use & prefix]:```fox: sends a wild Tamamo! \nping: pings (in case of lag etc.) \nallow: makes certain channel Tamamo-able! \nhelp: help!```"
                 })
             break;
             case 'fox':
